@@ -1,6 +1,6 @@
 # Solr Code Hints
 
-A PHPStorm code hint file for the pecl-solr(http://pecl.php.net/package/solr/1.0.2) extension.
+A PHPStorm code hint file for the pecl-solr(http://pecl.php.net/package/solr/2.4.0) extension.
 
 ## Install
 
@@ -8,6 +8,6 @@ composer.json
 
 ```js
 "require-dev": {
-    "tototoshi/pecl-solr-hint": "dev-master"
+    "cbleek/pecl-solr-hint": "dev-master"
 }
 ```

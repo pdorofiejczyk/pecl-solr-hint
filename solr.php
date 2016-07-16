@@ -20,11 +20,11 @@
 
 /* $Id$ */
 
-define('SOLR_MAJOR_VERSION', 1);
-define('SOLR_MINOR_VERSION', 0);
-define('SOLR_PATCH_VERSION', 1);
+define('SOLR_MAJOR_VERSION', 2);
+define('SOLR_MINOR_VERSION', 4);
+define('SOLR_PATCH_VERSION', 0);
 
-define('SOLR_EXTENSION_VERSION', '1.0.1');
+define('SOLR_EXTENSION_VERSION', '2.4.0');
 
 /**
  * Returns the current version of the Apache Solr extension
@@ -290,11 +290,12 @@ class SolrClient
      * Finalizes all add/deletes made to the index
      * 
      * @param int $maxSegments
-     * @param int $waitFlush
+     * @param bool $softCommit
      * @param bool $waitSearcher
+     * @param bool $expungeDeletes
      * @return SolrUpdateResponse
      */
-    public function commit($maxSegments, $waitFlush, $waitSearcher) {}
+    public function commit($maxSegments, $softCommit = false, $waitSearcher = true, $expungeDeletes = false) {}
 
     /**
      * Deletes the document with the specified ID. 
@@ -348,11 +349,11 @@ class SolrClient
      * Defragments the index for faster search performance
      * 
      * @param int $maxSegments
-     * @param int $waitFlush
+     * @param bool $softCommit
      * @param bool $waitSearcher
      * @return SolrUpdateResponse
      */
-    public function optimize($maxSegments, $waitFlush, $waitSearcher) {}
+    public function optimize($maxSegments = 1, $softCommit = true, $waitSearcher = true) {}
     
     /**
      * Checks if Solr server is still up
