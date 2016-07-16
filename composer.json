@@ -1,7 +1,7 @@
 {
     "name": "cbleek/pecl-solr-hint",
-    "description": "A code hint file for the solr extension.",
+    "description": "A code hint file for the solr 2.4 extension.",
     "keywords": ["solr", "hint"],
-    "homepage": "http://github.com/tototoshi/pecl-solr-hint",
+    "homepage": "http://github.com/cbleek/pecl-solr-hint",
     "license": "PHP"
 }

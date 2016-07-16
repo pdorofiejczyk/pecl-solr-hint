@@ -269,11 +269,11 @@ class SolrClient
      * Adds a document to the index
      * 
      * @param SolrInputDocument $doc
-     * @param bool $allowDups
+     * @param bool $overwrite
      * @param int $commitWithin
      * @return SolrUpdateResponse
      */
-    public function addDocument(SolrInputDocument &$doc, $allowDups, $commitWithin) {}
+    public function addDocument(SolrInputDocument &$doc, $overwrite = true, $commitWithin = 0) {}
     
     /**
      * Adds a collection of SolrInputDocument instances to the index
@@ -288,14 +288,13 @@ class SolrClient
     
     /**
      * Finalizes all add/deletes made to the index
-     * 
-     * @param int $maxSegments
+     *
      * @param bool $softCommit
      * @param bool $waitSearcher
      * @param bool $expungeDeletes
      * @return SolrUpdateResponse
      */
-    public function commit($maxSegments, $softCommit = false, $waitSearcher = true, $expungeDeletes = false) {}
+    public function commit($softCommit = false, $waitSearcher = true, $expungeDeletes = false) {}
 
     /**
      * Deletes the document with the specified ID. 
@@ -1356,6 +1355,42 @@ class SolrQuery extends SolrModifiableParams implements Serializable {
      * @return SolrQuery
      */
     public function  setTimeAllowed($timeAllowed) {}
+}
+
+class SolrDisMaxQuery extends SolrQuery {
+
+
+    public function addBigramPhraseField ( string $field , string $boost , string $slop=""  ){}
+    public function addBoostQuery ( string $field , string $value , string $boost=""  ){}
+    public function addPhraseField ( string $field , string $boost , string $slop=""  ){}
+    public function addQueryField ( string $field , string $boost=""  ){}
+    public function addTrigramPhraseField ( string $field , string $boost , string $slop ="" ){}
+    public function addUserField ( string $field ){}
+    public function __construct (){}
+    public function removeBigramPhraseField ( string $field ){}
+    public function removeBoostQuery ( string $field ){}
+    public function removePhraseField ( string $field ){}
+    public function removeQueryField ( string $field ){}
+    public function removeTrigramPhraseField ( string $field ){}
+    public function removeUserField ( string $field ){}
+    public function setBigramPhraseFields ( string $fields ){}
+    public function setBigramPhraseSlop ( string $slop ){}
+    public function setBoostFunction ( string $function ){}
+    public function setBoostQuery ( string $q ){}
+    public function setMinimumMatch ( string $value ){}
+    public function setPhraseFields ( string $fields ){}
+    public function setPhraseSlop ( string $slop ){}
+    public function setQueryAlt ( string $q ){}
+    public function setQueryPhraseSlop ( string $slop ){}
+    public function setTieBreaker ( string $tieBreaker ){}
+    public function setTrigramPhraseFields ( string $fields ){}
+    public function setTrigramPhraseSlop ( string $slop ){}
+    public function setUserFields ( string $fields ) {}
+    public function useDisMaxQueryParser () {}
+    public function useEDisMaxQueryParser () {}
+
+
+
 }
 
 
